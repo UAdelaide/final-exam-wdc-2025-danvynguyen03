@@ -40,7 +40,7 @@
           methods: {
             async fetchDOTD() {
               const res = await fetch('https://dog.ceo/api/breeds/image/random');
-              this.apiData data = await res.json();
+              this.apiData = await res.json();
             }
           }
         }).mount('#app');
