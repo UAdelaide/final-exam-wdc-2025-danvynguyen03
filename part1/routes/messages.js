@@ -23,6 +23,15 @@ router.get('/walkrequests/open/', async(req, res) => {
     res.json(rows);
 });
 
-router.get('/walkers/summary')
+router.get('/walkers/summary', async(req, res) => {
+    const [rows] = await db.query(`
+        SELECT u.name AS walker_name, COUNT(wr.request_id) AS total_walks
+        FROM Users u
+        LEFT JOIN WalkRequests wr ON u.user_id = wr.walker_id
+        WHERE u.role = 'walker'
+        GROUP BY u.user_id
+    `);
+    res.json(rows);
+});
 
 module.exports = router;
