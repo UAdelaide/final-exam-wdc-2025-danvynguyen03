@@ -19,44 +19,5 @@ app.use('/users', usersRouter);
 
 let db;
 
-(async () => {
-  try {
-    // Connect to MySQL without specifying a database
-    const connection = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '' // Set your MySQL root password
-    });
-
-    // Create the database if it doesn't exist
-    await connection.query('CREATE DATABASE IF NOT EXISTS testdb');
-    await connection.end();
-
-    // Now connect to the created database
-    db = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'testdb'
-    });
-
-    // Create a table if it doesn't exist
-    await db.execute(`
-      CREATE TABLE IF NOT EXISTS books (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(255),
-        author VARCHAR(255)
-      )
-    `);
-
-// Route to return books as JSON
-app.get('/', async (req, res) => {
-    try {
-      const [books] = await db.execute('SELECT * FROM books');
-      res.json(books);
-    } catch (err) {
-      res.status(500).json({ error: 'Failed to fetch books' });
-    }
-  });
 
 module.exports = app;
