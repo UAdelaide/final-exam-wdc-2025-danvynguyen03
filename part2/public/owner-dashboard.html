@@ -126,7 +126,24 @@
           error,
           submitWalkRequest
         };
-      }
+      },
+          // Logs out user
+    logout() {
+      fetch("/login/logout", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then((response) => {
+        if (response.ok) {
+          window.location.href = "/"; // Go to login page
+        } else {
+          console.error("Logout failed");
+        }
+      });
+    }
+  }
     }).mount('#app');
   </script>
 
