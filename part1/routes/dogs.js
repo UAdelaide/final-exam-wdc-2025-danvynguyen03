@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../db');
 
 /* GET dog list */
 router.get('/', async(req, res) {
