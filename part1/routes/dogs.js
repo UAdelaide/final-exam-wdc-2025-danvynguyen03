@@ -12,6 +12,10 @@ router.get('/dogs', async(req, res) {
         JOIN Users u ON d.owner_id = u.user_id
     `)
     res.json(rows);
+        }catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Failed to fetch book' });
+      }
 });
 
 module.exports = router;
