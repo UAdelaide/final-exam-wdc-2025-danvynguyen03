@@ -3,8 +3,8 @@ var router = express.Router();
 
 /* GET dog list */
 router.get('/', async(req, res) {
-    const [rows]
-  res.send('respond with a resource');
+    const [rows] = await req.db.execute('SELECT * FROM dogs');
+    res.send('respond with a resource');
 });
 
 module.exports = router;
