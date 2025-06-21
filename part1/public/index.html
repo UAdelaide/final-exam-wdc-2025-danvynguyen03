@@ -22,9 +22,10 @@
 
 <body>
     <div id="app">
-    <h1>D</h1>
+    <h1>Dog Of The Day</h1>
 
     <button @click="fetchAPOD">Fetch APOD Data</button>
+    <pre v-if="rawJson">{{ rawJson }}</pre>
     </div>
 
 </body>
