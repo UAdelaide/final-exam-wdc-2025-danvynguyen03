@@ -22,3 +22,14 @@ router.post('/login', async (req, res) => {
   });
 
   module.exports = router;
+
+  router.post('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            res.status(500).json({ message: 'There was an error with the server - logout failed' });
+            return;
+        }
+        res.clearCookie('connect.sid');
+        res.json({ message: 'You successfully logged out!' });
+    });
+});
