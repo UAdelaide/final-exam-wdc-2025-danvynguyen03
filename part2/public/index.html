@@ -36,13 +36,14 @@
     createApp({
       data() {
         return {
-          message: 'Welcome to the Dog Walking Service!'
+          message: 'Welcome to the Dog Walking Service!',
           username: '',
           password: '',
 
         };
       },
       methods: {
+        
         if (user.role === 'owner') {
             window.location.href = '/owner-dashboard.html';
           } else if (user.role === 'walker') {
