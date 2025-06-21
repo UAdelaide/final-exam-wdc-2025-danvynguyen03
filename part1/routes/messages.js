@@ -12,7 +12,7 @@ router.get('/dogs', async(req, res) => {
     res.json(rows);
 });
 
-router.get(/walkrequests/open/, async(req, res) => {
+router.get('/walkrequests/open/', async(req, res) => {
     const [rows] = await db.query(`
         SELECT wr.request_id, wr.walk_date, u.name AS walker_name, d.name AS dog_name
         FROM WalkRequests wr
@@ -21,7 +21,7 @@ router.get(/walkrequests/open/, async(req, res) => {
         WHERE wr.status = 'open'
     `);
     res.json(rows);
-}
+});
 
 
 module.exports = router;
