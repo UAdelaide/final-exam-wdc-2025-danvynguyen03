@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET dog list */
-router.get('/', function(req, res, next) {
+router.get('/dogs', async(req, res) {
+    
   res.send('respond with a resource');
 });
 
