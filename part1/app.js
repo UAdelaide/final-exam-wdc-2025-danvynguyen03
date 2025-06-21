@@ -22,6 +22,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/dogs', dogsRouter);
 app.use('/api/walkrequests/open', openRouter);
-app.use('/api/walkrequests/summary', summaryRouter);
+app.use('/api/walkers/summary', summaryRouter);
 
 module.exports = app;
