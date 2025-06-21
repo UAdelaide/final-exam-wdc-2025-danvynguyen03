@@ -7,7 +7,7 @@ router.get('/dogs', async(req, res) {
 
     try {
         const [rows] = await db.query(`
-        SELECT
+        SELECT d.name, 
         FROM Dogs d`
     )
     res.json(rows);
