@@ -25,8 +25,7 @@
               <option v-for="dog in dogs" :key="dog_mname" :value="dog_name">
                 {{ dog.name }} ({{ dog.size }})
               </option>
-
-          </div>
+            </select>
           <div class="mb-3">
             <label class="form-label">Requested Date & Time</label>
             <input v-model="form.requested_time" type="datetime-local" class="form-control" required>
