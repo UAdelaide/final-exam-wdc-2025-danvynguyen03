@@ -44,11 +44,6 @@
       },
       methods: {
         login(){
-     if (!this.username || !this.password) {
-            this.error = 'Both fields are required.';
-            return;
-          }
-        }
         if (user.role === 'owner') {
             window.location.href = '/owner-dashboard.html';
           } else if (user.role === 'walker') {
@@ -56,6 +51,7 @@
           } else {
             this.error = 'Unknown user role.';
       }
+    }
     }).mount('#app');
   </script>
 
