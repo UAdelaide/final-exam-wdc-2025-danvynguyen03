@@ -25,7 +25,7 @@
     <h1>Dog Of The Day</h1>
     <button type="button" @click="fetchDOTD">Fetch Dog of The Day</button>
     <div v-if="apiData">
-    <img :src="apiData.message" :alt="Dog of the Day" v-if="apiData.media_type === 'image'"/>
+    <img :src="apiData.message" :alt="Dog of the Day"/>
     </div>
     </div>
     <script>
