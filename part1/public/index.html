@@ -24,7 +24,7 @@
     <div id="app">
     <h1>Dog Of The Day</h1>
 
-    <button type="button" @click="fetchAPOD">Fetch Dog of The Day</button>
+    <button type="button" @click="fetchDOTD">Fetch Dog of The Day</button>
     <pre v-if="rawJson">{{ rawJson }}</pre>
     </div>
     <script>
@@ -37,7 +37,7 @@
             };
           },
           methods: {
-            async fetchAPOD() {
+            async fetchDOTD() {
               const res = await fetch('https://dog.ceo/api/breeds/image/random');
               const data = await res.json();
               this.rawJson = JSON.stringify(data, null, 2); // Pretty-printed JSON
