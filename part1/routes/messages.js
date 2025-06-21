@@ -12,7 +12,7 @@ router.get('/dogs', async(req, res) => {
     res.json(rows);
 });
 
-
+router.get(/walkre)
 
 
 module.exports = router;
