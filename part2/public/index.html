@@ -15,6 +15,27 @@
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
+    <form id="login-form">
+      <h1 class="login-text">Login</h1>
+      <p>or <a href="/signup">create an account</a></p>
+      <div class="input-box login-text">
+          <input type="text" placeholder="Email" name="email" required>
+          <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box login-text">
+          <input type="password" placeholder="Password" name="password" required>
+          <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <div class="remember-me login-text">
+          <label><input type="checkbox"> Remember me</label>
+      </div>
+      <div class="sign-in">
+          <button type="submit">Sign in</button>
+      </div>
+       <div class="sign-in">
+      </div>
+      <div id="loginError" class="error"></div>
+  </form>
   </div>
 
   <script>
