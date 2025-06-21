@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS DogWalkService;
+iDROP DATABASE IF EXISTS DogWalkService;
 CREATE DATABASE DogWalkService;
 USE DogWalkService;
 CREATE TABLE Users (
