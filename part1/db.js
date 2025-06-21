@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 
-const db = mysql.createPool({
+const pool = mysql.createPool({
   socketPath: '/var/run/mysqld/mysqld.sock',
   host: 'localhost',
   user: 'root',
