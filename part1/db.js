@@ -8,4 +8,4 @@ const db = mysql.createPool({
   database: 'dogwalks'
 });
 
-module.exports = db;
+module.exports = pool.romise();
